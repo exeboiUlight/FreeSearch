@@ -152,14 +152,12 @@
             font-size: 0.9rem;
         }
         
-        /* Иконки */
         .icon {
             width: 30px;
             height: 30px;
             filter: invert(1);
         }
         
-        /* Анимации */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -169,7 +167,6 @@
             animation: fadeIn 0.8s ease-out;
         }
         
-        /* Адаптивность */
         @media (max-width: 600px) {
             .search-title {
                 font-size: 2.5rem;
@@ -252,22 +249,19 @@
     </div>
 
     <script>
-        // Обновление времени
         function updateTime() {
             const now = new Date();
             const timeString = now.toLocaleTimeString('ru-RU');
             document.getElementById('time').textContent = timeString;
         }
         
-        // Обновляем время каждую секунду
         setInterval(updateTime, 1000);
-        updateTime(); // Инициализация времени сразу
+        updateTime();
         
         // Обработка поискового запроса
         document.querySelector('.search-button').addEventListener('click', function() {
             const searchQuery = document.querySelector('.search-input').value.trim();
             if (searchQuery) {
-                // Перенаправление в Google с поисковым запросом
                 window.location.href = `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`;
             }
         });
